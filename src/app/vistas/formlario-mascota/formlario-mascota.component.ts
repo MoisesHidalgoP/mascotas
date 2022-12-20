@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute,ParamMap } from '@angular/router';
@@ -28,6 +29,7 @@ export class FormlarioMascotaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log('hola soy formulario mascota');
     this.ruta.params.subscribe( params => {
       if(params['id']){
         this.documentId = String(params['id']);
@@ -70,7 +72,7 @@ export class FormlarioMascotaComponent implements OnInit {
     }
   }
   cancel() {
-    this.location;
+    this.location.back();
   }
 
   
